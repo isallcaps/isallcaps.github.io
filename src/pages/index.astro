@@ -1,0 +1,60 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+<Header />
+<main>
+	<h1>Hello!</h1>
+	<p>
+		Welcome to the chaos as I attempt to organize my brain.
+	</p>
+
+	<section class="projects">
+		<div class="project-item">
+			<a href="https://isallcaps.github.io/tiny-dev-tools/#/" target="_blank" class="component-link">
+				&lt;TinyDevTools/&gt;
+			</a>
+			<p>
+				Small, opinionated utilities built to solve specific front-end annoyances
+				without the feature creep.
+			</p>
+		</div>
+	</section>
+
+</main>
+<Footer />
+
+<style>
+    .projects {
+        margin-top: 3rem;
+    }
+    .component-link {
+        font-family: var(--font-mono, monospace);
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+    .component-link:hover {
+        text-decoration: underline;
+    }
+    .project-item p {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 500px; /* Keeps the text readable */
+    }
+</style>
+</body>
+</html>
